@@ -35,23 +35,27 @@ class Date
 
     }
 
-    void isLeapYear(){
+    bool isLeapYear(){
         if(year % 4 == 0 && (year % 100 == 0 || year % 400 != 0)){
-            cout << "Its leap year" << endl;
+            return true;
         }else{
-            cout << "Its not a leap year" << endl;
+            return false;
         }
     }
 
 };
 
 int main()
-{
+{   
     Date d;
     d.initDate();
     d.acceptDateFromConsole();
     d.printDateOnConsle();
-    d.isLeapYear();
+    if(d.isLeapYear()){
+        cout << "The year is a leap year." << endl;
+    }else{
+        cout << "The year is not a leap year." << endl;
+    }
 
     return 0;
 }
