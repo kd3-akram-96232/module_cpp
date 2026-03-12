@@ -78,6 +78,23 @@ int main()
 {
 
     TollBooth tb;
+    tb.payingCar();
+    tb.payingCar();
+    tb.payingCar();
+    tb.payingCar();
+    tb.payingCar();
+    tb.payingCar();
+    tb.payingCar();
+    tb.payingCar();
+
+    tb.noPayCar();
+    tb.noPayCar();
+    tb.noPayCar();
+    tb.noPayCar();
+    tb.noPayCar();
+
+    tb.printOnConsole();
+
     while (handleTollBoth(&tb) != 0)
     {
     }
