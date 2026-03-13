@@ -12,18 +12,6 @@ public:
 
     Time(int hour, int minute, int second)
     {
-        if (hour >= 0 && hour <= 23)
-        {
-            this->hour;
-        }
-        if (this->minute >= 0 && this->minute <= 59)
-        {
-            this->minute;
-        }
-        if (this->second >= 0 && this->second <= 59)
-        {
-            this->second;
-        }
     }
 
     void setHour(int hour)
