@@ -36,7 +36,7 @@ public:
     }
 };
 
-double Cylinder::PI = 22 / 7;
+// double Cylinder::PI = 22 / 7;
 
 int main()
 {
