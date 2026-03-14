@@ -24,7 +24,7 @@ class Date{
 class Person {
     string name;
     string address;
-    Date birthDate;
+    Date birthDate; // person has date
     public:
     Person(){}
         Person(string name, string address, int day, int month, int year): birthDate(day, month, year){
