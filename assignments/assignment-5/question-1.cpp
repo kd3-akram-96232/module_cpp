@@ -66,8 +66,11 @@ class Student {
     }
 
     void printStudent(){
-        cout << "---Student---"<<endl;
         person.printPerson();
+        cout << "---Student---"<<endl;
+        cout << "id: " << id << endl;
+        cout << "Marks: " << marks<<endl;
+        cout << "course: " << course<<endl;
         cout << "Joining Date: " << joiningDate.getDate() << endl;
         cout << "End Date: " << endDate.getDate() << endl;
     }
