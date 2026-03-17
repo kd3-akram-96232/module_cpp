@@ -245,7 +245,6 @@ int menuList(Employee *emps[], int totalEmps, int &currentEmp)
             case 5:{
                 // print all managers
                 for(int i=0; i<currentEmp; i++){
-                    
                     if(typeid(*emps[i]) == typeid(Manager)){
                         emps[i]->display();
                     }
@@ -264,7 +263,6 @@ int menuList(Employee *emps[], int totalEmps, int &currentEmp)
             case 7:{
                 // salesmanager
                 for(int i=0; i<currentEmp; i++){
-                    
                     if(typeid(*emps[i]) == typeid(SalesManager)){
                         emps[i]->display();
                     }
