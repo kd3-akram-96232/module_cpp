@@ -93,41 +93,120 @@ public:
     }
 };
 
+int menuList(Time *times, int arrSize){
+    int action;
+    cout << "--ACTIONS--" <<endl;
+    cout << "1. Enter Time" << endl;
+    cout << "2. Display Time" << endl;
+    cout << "3. Get hour" << endl;
+    cout << "4. Display all times" << endl;
+    cout << "0. Exit" << endl;
+
+    cout << "Enter action: ";
+    cin >> action;
+
+    switch(action){
+        case 1:
+        {
+            int index;
+            int hour;
+            int minute;
+            int second;
+            cout << "-----(total: " << arrSize <<"):Enter object index: ";
+            cin >> index;
+            cout << "----------Enter day: ";
+            cin>>hour;
+            cout << "----------Enter month: ";
+            cin>>minute;
+            cout << "----------Enter year: ";
+            cin>>second;
+
+            times[index].addTime(hour, minute, second);
+            cout << "Time added in object: " << index<<endl;
+            break;
+        }
+
+        case 2:
+            {int index;
+            cout << "-----(total: " << arrSize <<"):Enter object index: ";
+            cin >> index;
+            times[index].displayTime();
+            break;
+            }
+
+        case 3:{
+            int index;
+            cout << "-----(total: " << arrSize <<"):Enter object index: ";
+            cin>>index;
+            int hour = times[index].getHour();
+            cout << "display hour: " << hour <<endl;
+            break;
+        }
+        case 4:
+                for (int j = 0; j < arrSize; j++){   
+                    times[j].displayTime();
+                }
+                break;
+        case 0:
+                cout << "Ended."<<endl;
+                break;
+
+        default: 
+                cout << "you enter wrong option."<<endl;
+                break;
+                
+
+
+    }
+
+    return action;
+};
+
 int main()
 {
 
-    Time *times[5];
+    int arrSize;
+
+    cout << "How much time object: ";
+    cin >> arrSize;
+
+    Time *times[arrSize];
+
+
 
     // create dynamic objects
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < arrSize; i++)
     {
         times[i] = new Time();
     }
 
-    // add time
-    for (int i = 0; i < 5; i++)
+    while (menuList(*times, arrSize) != 0)
     {
-        times[i]->addTime(0, 0, 0);
+        
     }
+    
+
+    // add time
+    // for (int i = 0; i < arrSize; i++)
+    // {
+    //     times[i]->addTime(0, 0, 0);
+    // }
 
     // testing
-    for (int i = 0; i < 86400; i++)
-    {
-        times[0]->incrementSecond();
-    }
+    // for (int i = 0; i < 86400; i++)
+    // {
+    //     times[0]->incrementSecond();
+    // }
 
     // read all object times
-    for (int i = 0; i < 5; i++)
-    {
-        times[i]->displayTime();
-    }
+
 
     // display only hour of all objects
-    for (int i = 0; i < 5; i++)
-    {
-        int hour = times[i]->getHour();
-        cout << "Hour of: " << i << " object" << hour << endl;
-    }
+    // for (int i = 0; i < arrSize; i++)
+    // {
+    //     int hour = times[i]->getHour();
+    //     cout << "Hour of: " << i << " object" << hour << endl;
+    // }
 
     return 0;
 }
