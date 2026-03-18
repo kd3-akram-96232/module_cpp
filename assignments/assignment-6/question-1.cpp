@@ -25,7 +25,7 @@ class Product {
             return this->price;
         }
 
-        static void printFinalBill(Product *product[], int totalProduct, int productIndex){
+        static void printFinalBill(){
             cout << "----------------"<<endl;
             cout << "Final bill: " << Product::finalBill <<endl;
             cout << "----------------"<<endl;
@@ -139,7 +139,7 @@ int MenuList(Product *product[], int totalProduct, int &producIndex){
         producIndex++;
         break;
     case 3:
-        Product::printFinalBill(product, totalProduct, producIndex);
+        Product::printFinalBill();
         break;
     }
 
